@@ -4,8 +4,9 @@ import frenteImg from '../assets/frente.jpg';
 import tomahackImg from '../assets/tomahack.jpg';
 import barraImg from '../assets/barra.jpg';
 import tragoImg from '../assets/trago.jpg';
+import espacioVinosImg from '../assets/espacio-vinos.jpg';
+import sillasBarraImg from '../assets/sillas-barra.jpg';
 
-// Mix of real images and some placeholders where needed
 const GALLERY_IMAGES = [
   {
     src: frenteImg,
@@ -18,13 +19,18 @@ const GALLERY_IMAGES = [
     span: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop&q=80',
-    alt: 'Interior de restaurante elegante',
+    src: espacioVinosImg,
+    alt: 'Espacio de vinos y bodega',
     span: '',
   },
   {
     src: tomahackImg,
     alt: 'Tomahawk steak con guarnición',
+    span: '',
+  },
+  {
+    src: sillasBarraImg,
+    alt: 'Ambiente en la barra del restaurante',
     span: '',
   },
   {
