@@ -1,14 +1,14 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { FEATURED_DISHES } from '../constants/config';
 import tomahackImg from '../assets/tomahack.jpg';
+import pastaImg from '../assets/pasta.jpg';
+import paellaImg from '../assets/paella.jpg';
 
 // Placeholder images from Unsplash for dishes we don't have photos of
 const DISH_IMAGES = {
   tomahack: tomahackImg,
-  'placeholder-1':
-    'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop&q=80',
-  'placeholder-2':
-    'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&h=400&fit=crop&q=80',
+  paella: paellaImg,
+  pasta: pastaImg,
 };
 
 export default function FeaturedMenu() {
@@ -45,7 +45,7 @@ export default function FeaturedMenu() {
               {/* Image */}
               <div className="overflow-hidden mb-6">
                 <img
-                  src={DISH_IMAGES[dish.image]}
+                  src={DISH_IMAGES[dish.image] || dish.image}
                   alt={dish.name}
                   className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"

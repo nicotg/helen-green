@@ -1,8 +1,10 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import frenteImg from '../assets/frente.jpg';
 import tomahackImg from '../assets/tomahack.jpg';
+import barraImg from '../assets/barra.jpg';
+import tragoImg from '../assets/trago.jpg';
 
-// Mix of real images and Unsplash placeholders for a rich gallery
+// Mix of real images and some placeholders where needed
 const GALLERY_IMAGES = [
   {
     src: frenteImg,
@@ -10,8 +12,8 @@ const GALLERY_IMAGES = [
     span: 'md:col-span-2 md:row-span-2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop&q=80',
-    alt: 'Mesa servida con platos gourmet',
+    src: barraImg,
+    alt: 'Nuestra barra de tragos gourmet',
     span: '',
   },
   {
@@ -25,8 +27,8 @@ const GALLERY_IMAGES = [
     span: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop&q=80',
-    alt: 'Cócteles en la barra del bar',
+    src: tragoImg,
+    alt: 'Cócteles de autor en Helen Green',
     span: 'md:col-span-2',
   },
 ];

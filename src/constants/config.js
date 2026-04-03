@@ -32,22 +32,22 @@ export const FEATURED_DISHES = [
     id: 1,
     name: 'Tomahawk Steak',
     description: 'Corte premium a la parrilla con papas rústicas y salsa criolla casera.',
-    price: null, // sin precio por ahora
-    image: 'tomahack', // se mapea al import en el componente
+    price: null,
+    image: 'tomahack',
   },
   {
     id: 2,
-    name: 'Pizza de la Casa',
-    description: 'Masa madre, mozzarella ahumada, rúcula fresca y aceite de trufa.',
+    name: 'Paella Helen Green',
+    description: 'Nuestra especialidad de la casa con mariscos frescos y arroz azafranado.',
     price: null,
-    image: 'placeholder-1',
+    image: 'paella',
   },
   {
     id: 3,
     name: 'Pasta Fresca del Día',
     description: 'Elaboración artesanal diaria con ingredientes de estación.',
     price: null,
-    image: 'placeholder-2',
+    image: 'pasta',
   },
 ];
 
