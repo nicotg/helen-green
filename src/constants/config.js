@@ -49,6 +49,13 @@ export const FEATURED_DISHES = [
     price: null,
     image: 'pasta',
   },
+  {
+    id: 4,
+    name: 'Costillas BBQ',
+    description: 'Costillas ahumadas con salsa barbacoa de la casa, tiernas y llenas de sabor.',
+    price: null,
+    image: 'costillas-bbq',
+  },
 ];
 
 // Testimonios simulados

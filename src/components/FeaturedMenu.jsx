@@ -4,12 +4,13 @@ import { FEATURED_DISHES } from '../constants/config';
 import tomahackImg from '../assets/tomahack.jpg';
 import pastaImg from '../assets/pasta.jpg';
 import paellaImg from '../assets/paella.jpg';
+import costillasBbqImg from '../assets/costillas-bbq.jpg';
 
-// Placeholder images from Unsplash for dishes we don't have photos of
 const DISH_IMAGES = {
   tomahack: tomahackImg,
   paella: paellaImg,
   pasta: pastaImg,
+  'costillas-bbq': costillasBbqImg,
 };
 
 export default function FeaturedMenu() {
@@ -37,7 +38,7 @@ export default function FeaturedMenu() {
         </div>
 
         {/* Dishes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {FEATURED_DISHES.map((dish, index) => (
             <div
               key={dish.id}

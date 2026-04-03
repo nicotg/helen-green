@@ -1,6 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 import { INSTAGRAM_URL } from '../constants/config';
 import frenteImg from '../assets/frente.jpg';
+import videoApertura from '../assets/video-apertura.mp4';
 
 export default function Hero() {
   const handleScrollDown = () => {
@@ -13,13 +14,18 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image */}
+      {/* Background video with image fallback */}
       <div className="absolute inset-0">
-        <img
-          src={frenteImg}
-          alt="Fachada del restaurante Helen Green de noche"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={frenteImg}
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={videoApertura} type="video/mp4" />
+        </video>
         {/* Overlay */}
         <div className="absolute inset-0 bg-forest/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
