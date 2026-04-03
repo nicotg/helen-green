@@ -29,16 +29,28 @@ export default function ImageModal() {
         <X size={32} />
       </button>
 
-      {/* Image Container */}
+      {/* Media Container */}
       <div 
-        className="relative max-w-full max-h-full flex items-center justify-center animate-zoom-in"
+        className="relative max-w-full max-h-full w-full md:w-auto h-full flex flex-col items-center justify-center animate-zoom-in"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={currentImage.src}
-          alt={currentImage.alt}
-          className="max-w-full max-h-[90vh] object-contain shadow-2xl border border-white/10"
-        />
+        {currentImage.type === 'video' ? (
+          <video
+            autoPlay
+            controls
+            playsInline
+            className="w-full md:w-auto max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/10"
+          >
+            <source src={currentImage.src} type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        ) : (
+          <img
+            src={currentImage.src}
+            alt={currentImage.alt}
+            className="max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/10"
+          />
+        )}
         
         {/* Caption */}
         {currentImage.alt && (

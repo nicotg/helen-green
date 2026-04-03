@@ -1,6 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useImageModal } from '../context/ImageModalContext';
-import videoCata from '../assets/video-cata-picapiedras.mp4';
+import videoMerienda from '../assets/video-merienda.mp4';
 
 const SWEETS = [
   {
@@ -14,12 +14,6 @@ const SWEETS = [
     name: 'Merienda Helen Green',
     description: 'Café de especialidad, scones caseros y dulzuras para compartir.',
     image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop&q=80',
-  },
-  {
-    id: 3,
-    name: 'Tabla de Quesos & Dulces',
-    description: 'Selección de quesos artesanales con frutos secos, miel y mermeladas caseras.',
-    image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=600&h=400&fit=crop&q=80',
   },
 ];
 
@@ -48,7 +42,7 @@ export default function Desserts() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 mb-16">
           {SWEETS.map((item, index) => (
             <div
               key={item.id}
@@ -89,7 +83,7 @@ export default function Desserts() {
                 controls
                 className="w-full max-h-[70vh] object-contain bg-forest-light"
               >
-                <source src={videoCata} type="video/mp4" />
+                <source src={videoMerienda} type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
               </video>
             </div>

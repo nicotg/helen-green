@@ -117,23 +117,38 @@ export default function Events() {
         </div>
 
         {/* Burger Event Video */}
-        <div className="mt-16 scroll-hidden">
-          <div className="relative overflow-hidden max-w-md mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-20">
+          <div className="lg:order-2">
+            <div className="w-10 h-px bg-sage mb-8" />
+            <h3 className="font-display text-2xl md:text-3xl text-blush font-semibold mb-6 leading-snug">
+              Noche de Burgers
+            </h3>
+            <p className="font-body text-blush/60 leading-relaxed mb-4">
+              Cada tanto encendemos las parrillas para un evento distinto: nuestra clásica <strong>Noche de Burgers</strong>. 
+              Un menú especial de hamburguesas gourmet con panes artesanales, combinaciones únicas y toda la identidad de la cocina de Helen Green.
+            </p>
+            <p className="font-body text-blush/60 leading-relaxed">
+              Música, cócteles, y el mejor ambiente para disfrutar con amigos. 
+              Mantente atento a nuestras redes sociales para enterarte de nuestra próxima edición.
+            </p>
+          </div>
+
+          <div className="lg:order-1 overflow-hidden max-w-sm mx-auto w-full">
             <video
               autoPlay
               muted
               loop
               playsInline
               controls
-              className="w-full max-h-[70vh] object-contain bg-forest-light"
+              className="w-full max-h-[70vh] object-contain rounded bg-forest-light"
             >
               <source src={videoEventoBurger} type="video/mp4" />
               Tu navegador no soporta el elemento de video.
             </video>
+            <p className="text-center font-body text-xs text-blush/40 mt-4 tracking-wider uppercase">
+              Eventos temáticos
+            </p>
           </div>
-          <p className="text-center font-body text-sm text-blush/40 mt-4 tracking-wider">
-            Eventos temáticos — Noche de Burgers
-          </p>
         </div>
       </div>
     </section>

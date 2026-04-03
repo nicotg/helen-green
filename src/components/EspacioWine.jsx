@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useImageModal } from '../context/ImageModalContext';
 import espacioWineImg from '../assets/espacio-wine.jpg';
@@ -20,6 +21,28 @@ const STEPS = [
 export default function EspacioWine() {
   const sectionRef = useScrollAnimation();
   const { openImage } = useImageModal();
+  const carouselRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const container = carouselRef.current;
+    const containerCenter = container.scrollLeft + container.offsetWidth / 2;
+    
+    let closestIndex = 0;
+    let minDistance = Infinity;
+    
+    Array.from(container.children).forEach((child, index) => {
+      const childCenter = child.offsetLeft + child.offsetWidth / 2;
+      const distance = Math.abs(containerCenter - childCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = index;
+      }
+    });
+    
+    setActiveIndex(closestIndex);
+  };
 
   return (
     <section
@@ -81,32 +104,54 @@ export default function EspacioWine() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {STEPS.map((step, index) => (
-              <div
-                key={index}
-                className="scroll-hidden"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="overflow-hidden bg-forest-light mb-3">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full aspect-[9/16] object-cover"
-                  >
-                    <source src={step.video} type="video/mp4" />
-                  </video>
+          <div className="relative -mx-6 sm:mx-0 px-6 sm:px-0">
+            <div 
+              ref={carouselRef}
+              onScroll={handleScroll}
+              className="flex overflow-x-auto gap-4 sm:gap-8 pb-8 pt-4 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-1/2"
+              style={{ scrollPaddingLeft: '50%' }}
+            >
+              {STEPS.map((step, index) => (
+                <div
+                  key={index}
+                  className={`group cursor-pointer w-[75vw] sm:w-[320px] shrink-0 snap-center transition-all duration-500 ease-out ${
+                    index === activeIndex ? 'scale-100 opacity-100' : 'scale-90 opacity-60'
+                  }`}
+                  onClick={() => openImage({ src: step.video, alt: `${step.title}: ${step.description}`, type: 'video' })}
+                >
+                  <div className="relative overflow-hidden bg-forest-light mb-4 rounded-lg shadow-lg">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full aspect-[4/5] sm:aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
+                    >
+                      <source src={step.video} type="video/mp4" />
+                    </video>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/20 transition-all duration-300" />
+                    {/* Inactive gradient overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/20 to-transparent transition-opacity duration-500 pointer-events-none ${
+                        index === activeIndex ? 'opacity-0' : 'opacity-100'
+                    }`} />
+                  </div>
+                  <div className={`transition-all duration-500 ${index === activeIndex ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-50'}`}>
+                    <h4 className="font-display text-xl text-forest font-semibold mb-1">
+                      {step.title}
+                    </h4>
+                    <p className="font-body text-sm text-forest/70">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-                <h4 className="font-display text-lg text-forest font-semibold">
-                  {step.title}
-                </h4>
-                <p className="font-body text-xs text-forest/60">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Carousel instructions */}
+            <p className="text-center font-body text-xs tracking-widest uppercase text-forest/40 mt-2 sm:hidden">
+              ← Desliza para ver más →
+            </p>
           </div>
         </div>
 
