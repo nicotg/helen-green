@@ -11,29 +11,29 @@ import horacioImg from '../assets/horacio.jpg';
 
 const GALLERY_IMAGES = [
   {
-    src: frenteImg,
-    alt: 'Fachada del restaurante Helen Green de noche',
-    span: 'md:col-span-2 md:row-span-2',
-  },
-  {
-    src: barraImg,
-    alt: 'Nuestra barra de tragos gourmet',
-    span: '',
-  },
-  {
-    src: espacioWineImg,
-    alt: 'Espacio de vinos y bodega',
-    span: '',
-  },
-  {
     src: terrazaImg,
     alt: 'Terraza al aire libre de Helen Green',
-    span: 'md:col-span-2',
+    span: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2', // Large focus
   },
   {
     src: sillasBarraImg,
     alt: 'Ambiente en la barra del restaurante',
-    span: '',
+    span: 'col-span-1 row-span-2 md:col-span-1 md:row-span-2', // Portrait
+  },
+  {
+    src: frenteImg,
+    alt: 'Fachada del restaurante Helen Green de noche',
+    span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1', // Square
+  },
+  {
+    src: barraImg,
+    alt: 'Nuestra barra de tragos gourmet',
+    span: 'col-span-2 row-span-1 md:col-span-2 md:row-span-1', // Landscape
+  },
+  {
+    src: espacioWineImg,
+    alt: 'Espacio de vinos y bodega',
+    span: 'col-span-1 row-span-1 md:col-span-1 md:row-span-1', // Square
   },
 ];
 
@@ -77,23 +77,23 @@ export default function Gallery() {
         </div>
 
         {/* Mosaic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[140px] md:auto-rows-[180px] grid-flow-dense max-w-5xl mx-auto">
           {GALLERY_IMAGES.map((image, index) => (
             <div
               key={index}
-              className={`scroll-hidden group relative overflow-hidden ${image.span} cursor-pointer`}
+              className={`scroll-hidden group relative overflow-hidden rounded-md cursor-pointer ${image.span}`}
               style={{ transitionDelay: `${index * 100}ms` }}
               onClick={() => openImage(image)}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-64 md:h-full min-h-[250px] object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/40 transition-all duration-500 flex items-end">
-                <p className="text-blush text-sm font-body tracking-wider p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <p className="text-blush text-xs sm:text-sm font-body tracking-wider p-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                   {image.alt}
                 </p>
               </div>
@@ -113,21 +113,21 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {CELEBRITIES.map((celeb, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden cursor-pointer"
+                className="group relative overflow-hidden cursor-pointer rounded-md"
                 onClick={() => openImage(celeb)}
               >
                 <img
                   src={celeb.src}
                   alt={celeb.alt}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-56 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent flex items-end">
-                  <p className="text-blush font-display text-lg font-semibold p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-transparent flex items-end">
+                  <p className="text-blush font-display text-sm md:text-lg font-semibold p-4">
                     {celeb.name}
                   </p>
                 </div>
