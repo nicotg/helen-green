@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useImageModal } from '../context/ImageModalContext';
 import frenteImg from '../assets/frente.jpg';
 import tomahackImg from '../assets/tomahack.jpg';
 import barraImg from '../assets/barra.jpg';
@@ -35,6 +36,7 @@ const GALLERY_IMAGES = [
 
 export default function Gallery() {
   const sectionRef = useScrollAnimation();
+  const { openImage } = useImageModal();
 
   return (
     <section
@@ -58,8 +60,9 @@ export default function Gallery() {
           {GALLERY_IMAGES.map((image, index) => (
             <div
               key={index}
-              className={`scroll-hidden group relative overflow-hidden ${image.span}`}
+              className={`scroll-hidden group relative overflow-hidden ${image.span} cursor-pointer`}
               style={{ transitionDelay: `${index * 100}ms` }}
+              onClick={() => openImage(image)}
             >
               <img
                 src={image.src}

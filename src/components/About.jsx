@@ -1,9 +1,11 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useImageModal } from '../context/ImageModalContext';
 import frenteHistoriaImg from '../assets/frente-historia.jpg';
-import horacioImg from '../assets/horacio.jpg';
+import videoHistoria from '../assets/video-historia.mp4';
 
 export default function About() {
   const sectionRef = useScrollAnimation();
+  const { openImage } = useImageModal();
 
   return (
     <section
@@ -24,11 +26,14 @@ export default function About() {
 
         {/* First row — Image + Text */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-          <div className="scroll-hidden overflow-hidden">
+          <div 
+            className="scroll-hidden overflow-hidden cursor-pointer"
+            onClick={() => openImage({ src: frenteHistoriaImg, alt: 'Foto histórica del edificio Helen Green' })}
+          >
             <img
               src={frenteHistoriaImg}
               alt="Foto histórica del edificio Helen Green comparada con la actualidad"
-              className="w-full h-[400px] lg:h-[500px] object-cover"
+              className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
 
@@ -53,12 +58,18 @@ export default function About() {
 
         {/* Second row — Text + Image (reversed) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="scroll-hidden lg:order-2 overflow-hidden">
-            <img
-              src={horacioImg}
-              alt="Persona firmando un plato en el restaurante Helen Green"
-              className="w-full h-[400px] lg:h-[500px] object-cover"
-            />
+          <div className="lg:order-2 overflow-hidden bg-forest/10 relative">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full h-[400px] lg:h-[650px] object-cover"
+            >
+              <source src={videoHistoria} type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
           </div>
 
           <div className="scroll-hidden lg:order-1">
@@ -68,13 +79,13 @@ export default function About() {
               <span className="text-wine">importa</span>
             </h3>
             <p className="font-body text-forest/70 leading-relaxed mb-4">
-              Desde la selección de ingredientes hasta la presentación de cada plato,
-              cuidamos cada aspecto de tu visita. Nuestro equipo trabaja con dedicación
-              para que cada momento en Helen Green sea memorable.
+              Sin dudas, esta historia inspirada en la hermosa casa que nos alberga y el respeto por sus raíces, comenzó mucho antes.
             </p>
-            <p className="font-body text-forest/70 leading-relaxed">
-              Un lugar pensado para disfrutar: con amigos, en pareja o en familia.
-              La mesa está servida.
+            <p className="font-body text-forest/70 leading-relaxed mb-4">
+              La pasión por la buena gastronomía y una sincera hospitalidad fueron el puntapié inicial.
+              El sacrificio diario y el compromiso con hacer las cosas bien nuestros pilares fundamentales.
+              Somos amantes del buen gusto, cuidamos a los que más queremos y buscamos estar en todos los detalles para que así lo sientan.
+              Con cada visita a Helen, esta historia se sigue escribiendo. Gracias por ser parte!
             </p>
           </div>
         </div>

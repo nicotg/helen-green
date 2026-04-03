@@ -7,10 +7,12 @@ import Testimonials from './components/Testimonials';
 import Location from './components/Location';
 import Footer from './components/Footer';
 import FloatingCTA from './components/FloatingCTA';
+import ImageModal from './components/ImageModal';
+import { ImageModalProvider } from './context/ImageModalContext';
 
 function App() {
   return (
-    <>
+    <ImageModalProvider>
       <Navbar />
       <main>
         <Hero />
@@ -22,7 +24,8 @@ function App() {
       </main>
       <Footer />
       <FloatingCTA />
-    </>
+      <ImageModal />
+    </ImageModalProvider>
   );
 }
 

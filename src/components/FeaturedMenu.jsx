@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useImageModal } from '../context/ImageModalContext';
 import { FEATURED_DISHES } from '../constants/config';
 import tomahackImg from '../assets/tomahack.jpg';
 import pastaImg from '../assets/pasta.jpg';
@@ -13,6 +14,7 @@ const DISH_IMAGES = {
 
 export default function FeaturedMenu() {
   const sectionRef = useScrollAnimation();
+  const { openImage } = useImageModal();
 
   return (
     <section
@@ -43,7 +45,13 @@ export default function FeaturedMenu() {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Image */}
-              <div className="overflow-hidden mb-6">
+              <div 
+                className="overflow-hidden mb-6 cursor-pointer"
+                onClick={() => openImage({ 
+                  src: DISH_IMAGES[dish.image] || dish.image, 
+                  alt: dish.name 
+                })}
+              >
                 <img
                   src={DISH_IMAGES[dish.image] || dish.image}
                   alt={dish.name}
