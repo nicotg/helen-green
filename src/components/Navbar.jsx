@@ -62,7 +62,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className="hidden md:inline-block px-6 py-2.5 bg-wine text-blush text-sm font-medium tracking-wider uppercase border border-wine hover:bg-wine-light hover:border-wine-light transition-all duration-300"
         >
-          Reservar Mesa
+          Reservá tu mesa
         </a>
 
         {/* Mobile hamburger */}
@@ -98,7 +98,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="mt-2 px-6 py-3 bg-wine text-blush text-sm font-medium tracking-wider uppercase text-center border border-wine hover:bg-wine-light transition-all duration-300"
           >
-            Reservar Mesa
+            Reservá tu mesa
           </a>
         </div>
       </div>

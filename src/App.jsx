@@ -1,7 +1,10 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Events from './components/Events';
 import FeaturedMenu from './components/FeaturedMenu';
+import Cocktails from './components/Cocktails';
+import Desserts from './components/Desserts';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import Location from './components/Location';
@@ -17,7 +20,10 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Events />
         <FeaturedMenu />
+        <Cocktails />
+        <Desserts />
         <Gallery />
         <Testimonials />
         <Location />

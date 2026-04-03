@@ -1,11 +1,13 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useImageModal } from '../context/ImageModalContext';
 import frenteImg from '../assets/frente.jpg';
-import tomahackImg from '../assets/tomahack.jpg';
 import barraImg from '../assets/barra.jpg';
-import tragoImg from '../assets/trago.jpg';
-import espacioVinosImg from '../assets/espacio-vinos.jpg';
+import espacioWineImg from '../assets/espacio-wine.jpg';
 import sillasBarraImg from '../assets/sillas-barra.jpg';
+import terrazaImg from '../assets/terraza.jpg';
+import scaloniImg from '../assets/scaloni.jpg';
+import scaloniStaffImg from '../assets/scaloni-staff.jpg';
+import videoPatio from '../assets/video-patio.mp4';
 
 const GALLERY_IMAGES = [
   {
@@ -19,24 +21,32 @@ const GALLERY_IMAGES = [
     span: '',
   },
   {
-    src: espacioVinosImg,
+    src: espacioWineImg,
     alt: 'Espacio de vinos y bodega',
     span: '',
   },
   {
-    src: tomahackImg,
-    alt: 'Tomahawk steak con guarnición',
-    span: '',
+    src: terrazaImg,
+    alt: 'Terraza al aire libre de Helen Green',
+    span: 'md:col-span-2',
   },
   {
     src: sillasBarraImg,
     alt: 'Ambiente en la barra del restaurante',
     span: '',
   },
+];
+
+const CELEBRITIES = [
   {
-    src: tragoImg,
-    alt: 'Cócteles de autor en Helen Green',
-    span: 'md:col-span-2',
+    src: scaloniImg,
+    alt: 'Lionel Scaloni visitando Helen Green',
+    name: 'Lionel Scaloni',
+  },
+  {
+    src: scaloniStaffImg,
+    alt: 'Lionel Scaloni con el staff de Helen Green',
+    name: 'Scaloni con nuestro equipo',
   },
 ];
 
@@ -84,6 +94,61 @@ export default function Gallery() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Patio Video */}
+        <div className="mt-12 scroll-hidden">
+          <div className="overflow-hidden max-w-4xl mx-auto">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full h-[300px] lg:h-[400px] object-cover"
+            >
+              <source src={videoPatio} type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <p className="text-center font-body text-sm text-forest/40 mt-4 tracking-wider">
+            Nuestro patio — el lugar perfecto para disfrutar al aire libre
+          </p>
+        </div>
+
+        {/* Celebrities Subsection */}
+        <div className="mt-20 scroll-hidden">
+          <div className="text-center mb-12">
+            <div className="w-10 h-px bg-wine mx-auto mb-6" />
+            <h3 className="font-display text-2xl md:text-3xl text-forest font-semibold">
+              Nos Visitaron
+            </h3>
+            <p className="font-body text-forest/60 text-sm mt-3 max-w-lg mx-auto">
+              Personalidades que eligieron Helen Green para disfrutar de una experiencia única.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {CELEBRITIES.map((celeb, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden cursor-pointer"
+                onClick={() => openImage(celeb)}
+              >
+                <img
+                  src={celeb.src}
+                  alt={celeb.alt}
+                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent flex items-end">
+                  <p className="text-blush font-display text-lg font-semibold p-6">
+                    {celeb.name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

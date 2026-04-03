@@ -22,7 +22,6 @@ export const RESTAURANT = {
   socials: {
     instagram: `https://instagram.com/${INSTAGRAM_USER}`,
     facebook: '#',
-    whatsapp: '#',
   },
 };
 
@@ -84,7 +83,9 @@ export const TESTIMONIALS = [
 export const NAV_LINKS = [
   { label: 'Inicio', href: '#hero' },
   { label: 'Nosotros', href: '#about' },
+  { label: 'Eventos', href: '#events' },
   { label: 'Menú', href: '#menu' },
+  { label: 'Cocktails', href: '#cocktails' },
   { label: 'Galería', href: '#gallery' },
   { label: 'Ubicación', href: '#location' },
 ];

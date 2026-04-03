@@ -55,7 +55,7 @@ export default function Hero() {
           rel="noopener noreferrer"
           className="inline-block px-10 py-4 bg-wine text-blush text-sm font-medium tracking-[0.2em] uppercase border border-wine hover:bg-wine-light hover:border-wine-light transition-all duration-300 animate-fade-in-slow"
         >
-          Reservar Mesa
+          Reservá tu mesa
         </a>
 
         {/* Decorative line */}

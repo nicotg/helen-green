@@ -27,7 +27,8 @@ export default {
         cream: '#FAF6F0',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
+        heading: ['"Josefin Sans"', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       animation: {

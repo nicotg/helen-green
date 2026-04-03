@@ -24,10 +24,10 @@ export default function FloatingCTA() {
           ? 'translate-y-0 opacity-100'
           : 'translate-y-16 opacity-0 pointer-events-none'
       }`}
-      aria-label="Reservar Mesa"
+      aria-label="Reservá tu mesa"
     >
       <CalendarCheck size={18} />
-      <span className="hidden sm:inline">Reservar Mesa</span>
+      <span className="hidden sm:inline">Reservá tu mesa</span>
     </a>
   );
 }
