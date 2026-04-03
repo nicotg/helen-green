@@ -108,7 +108,7 @@ export default function Events() {
               loop
               playsInline
               controls
-              className="w-full h-[350px] lg:h-[450px] object-cover"
+              className="w-full max-h-[70vh] object-contain mx-auto bg-forest-light"
             >
               <source src={videoEventosPrivados} type="video/mp4" />
               Tu navegador no soporta el elemento de video.
@@ -118,14 +118,14 @@ export default function Events() {
 
         {/* Burger Event Video */}
         <div className="mt-16 scroll-hidden">
-          <div className="relative overflow-hidden max-w-3xl mx-auto">
+          <div className="relative overflow-hidden max-w-md mx-auto">
             <video
               autoPlay
               muted
               loop
               playsInline
               controls
-              className="w-full h-[300px] lg:h-[400px] object-cover"
+              className="w-full max-h-[70vh] object-contain bg-forest-light"
             >
               <source src={videoEventoBurger} type="video/mp4" />
               Tu navegador no soporta el elemento de video.

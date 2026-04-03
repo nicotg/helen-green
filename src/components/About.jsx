@@ -58,14 +58,14 @@ export default function About() {
 
         {/* Second row — Text + Image (reversed) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="lg:order-2 overflow-hidden bg-forest/10 relative">
+          <div className="lg:order-2 overflow-hidden bg-forest/10 relative max-w-sm mx-auto lg:mx-0">
             <video
               autoPlay
               muted
               loop
               playsInline
               controls
-              className="w-full h-[400px] lg:h-[650px] object-cover"
+              className="w-full max-h-[70vh] object-contain"
             >
               <source src={videoHistoria} type="video/mp4" />
               Tu navegador no soporta el elemento de video.

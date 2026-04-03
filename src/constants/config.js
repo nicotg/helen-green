@@ -84,8 +84,8 @@ export const NAV_LINKS = [
   { label: 'Inicio', href: '#hero' },
   { label: 'Nosotros', href: '#about' },
   { label: 'Eventos', href: '#events' },
+  { label: 'Espacio Wine', href: '#espacio-wine' },
   { label: 'Menú', href: '#menu' },
-  { label: 'Cocktails', href: '#cocktails' },
   { label: 'Galería', href: '#gallery' },
   { label: 'Ubicación', href: '#location' },
 ];

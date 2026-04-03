@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { RESTAURANT, NAV_LINKS, INSTAGRAM_URL } from '../constants/config';
+import { RESTAURANT, NAV_LINKS } from '../constants/config';
 
 // Inline SVG icons for branded social media (lucide-react doesn't include branded icons)
 function InstagramIcon({ size = 18 }) {
@@ -101,14 +101,6 @@ export default function Footer() {
           <p className="font-body text-xs text-blush/30">
             © {new Date().getFullYear()} {RESTAURANT.name}. Todos los derechos reservados.
           </p>
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body text-xs text-wine hover:text-wine-light transition-colors duration-300 tracking-wider uppercase"
-          >
-            Reservá tu mesa →
-          </a>
         </div>
       </div>
     </footer>
