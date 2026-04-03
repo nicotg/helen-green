@@ -1,20 +1,25 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useImageModal } from '../context/ImageModalContext';
-import empanadaImg from '../assets/empanada-entrada.jpg';
-import salmonImg from '../assets/salmón.jpg';
+import videoCata from '../assets/video-cata-picapiedras.mp4';
 
-const DESSERTS = [
+const SWEETS = [
   {
     id: 1,
-    name: 'Empanadas de Entrada',
-    description: 'Empanadas artesanales horneadas, ideales para compartir antes del plato principal.',
-    image: empanadaImg,
+    name: 'Torta del Día',
+    description: 'Elaboración artesanal diaria, el cierre perfecto para tu cena.',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop&q=80',
   },
   {
     id: 2,
-    name: 'Salmón Ahumado',
-    description: 'Delicado salmón ahumado con crema de eneldo y pan de campo tostado.',
-    image: salmonImg,
+    name: 'Merienda Helen Green',
+    description: 'Café de especialidad, scones caseros y dulzuras para compartir.',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop&q=80',
+  },
+  {
+    id: 3,
+    name: 'Tabla de Quesos & Dulces',
+    description: 'Selección de quesos artesanales con frutos secos, miel y mermeladas caseras.',
+    image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=600&h=400&fit=crop&q=80',
   },
 ];
 
@@ -32,19 +37,19 @@ export default function Desserts() {
         {/* Header */}
         <div className="text-center mb-16 scroll-hidden">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-wine mb-4">
-            Para Compartir
+            Para Endulzar
           </p>
           <h2 className="section-title text-forest">
-            Algo Dulce y Más
+            Algo Dulce
           </h2>
           <p className="font-body text-forest/60 text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
-            Entradas y bocados que completan la experiencia Helen Green.
+            Postres, meriendas y dulzuras que completan la experiencia Helen Green.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {DESSERTS.map((item, index) => (
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {SWEETS.map((item, index) => (
             <div
               key={item.id}
               className="scroll-hidden group"
@@ -70,6 +75,39 @@ export default function Desserts() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Merienda Video */}
+        <div className="scroll-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="overflow-hidden max-w-sm mx-auto lg:mx-0">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="w-full max-h-[70vh] object-contain bg-forest-light"
+              >
+                <source src={videoCata} type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <div>
+              <div className="w-10 h-px bg-wine mb-8" />
+              <h3 className="font-display text-2xl md:text-3xl text-forest font-semibold mb-6 leading-snug">
+                La hora de <span className="text-wine">la merienda</span>
+              </h3>
+              <p className="font-body text-forest/70 leading-relaxed mb-4">
+                No todo es cena en Helen Green. Nuestra propuesta de merienda incluye
+                café de especialidad, pastelería artesanal y un ambiente pensado para
+                disfrutar de la tarde.
+              </p>
+              <p className="font-body text-forest/70 leading-relaxed">
+                Vení a descubrir una experiencia diferente en cada visita.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

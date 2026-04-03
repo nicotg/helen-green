@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { NAV_LINKS, INSTAGRAM_URL } from '../constants/config';
+import { NAV_LINKS } from '../constants/config';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,16 +55,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Desktop */}
-        <a
-          href={INSTAGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-block px-6 py-2.5 bg-wine text-blush text-sm font-medium tracking-wider uppercase border border-wine hover:bg-wine-light hover:border-wine-light transition-all duration-300"
-        >
-          Reservá tu mesa
-        </a>
-
         {/* Mobile hamburger */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -92,14 +82,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 px-6 py-3 bg-wine text-blush text-sm font-medium tracking-wider uppercase text-center border border-wine hover:bg-wine-light transition-all duration-300"
-          >
-            Reservá tu mesa
-          </a>
         </div>
       </div>
     </header>

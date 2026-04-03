@@ -2,6 +2,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Events from './components/Events';
+import EspacioWine from './components/EspacioWine';
+import Patio from './components/Patio';
 import FeaturedMenu from './components/FeaturedMenu';
 import Cocktails from './components/Cocktails';
 import Desserts from './components/Desserts';
@@ -21,6 +23,8 @@ function App() {
         <Hero />
         <About />
         <Events />
+        <EspacioWine />
+        <Patio />
         <FeaturedMenu />
         <Cocktails />
         <Desserts />

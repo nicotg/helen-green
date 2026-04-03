@@ -7,7 +7,7 @@ import sillasBarraImg from '../assets/sillas-barra.jpg';
 import terrazaImg from '../assets/terraza.jpg';
 import scaloniImg from '../assets/scaloni.jpg';
 import scaloniStaffImg from '../assets/scaloni-staff.jpg';
-import videoPatio from '../assets/video-patio.mp4';
+import horacioImg from '../assets/horacio.jpg';
 
 const GALLERY_IMAGES = [
   {
@@ -47,6 +47,11 @@ const CELEBRITIES = [
     src: scaloniStaffImg,
     alt: 'Lionel Scaloni con el staff de Helen Green',
     name: 'Scaloni con nuestro equipo',
+  },
+  {
+    src: horacioImg,
+    alt: 'Horacio Pagani visitando Helen Green',
+    name: 'Horacio Pagani',
   },
 ];
 
@@ -96,26 +101,6 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Patio Video */}
-        <div className="mt-12 scroll-hidden">
-          <div className="overflow-hidden max-w-4xl mx-auto">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              className="w-full h-[300px] lg:h-[400px] object-cover"
-            >
-              <source src={videoPatio} type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
-          </div>
-          <p className="text-center font-body text-sm text-forest/40 mt-4 tracking-wider">
-            Nuestro patio — el lugar perfecto para disfrutar al aire libre
-          </p>
-        </div>
-
         {/* Celebrities Subsection */}
         <div className="mt-20 scroll-hidden">
           <div className="text-center mb-12">
@@ -128,7 +113,7 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {CELEBRITIES.map((celeb, index) => (
               <div
                 key={index}
