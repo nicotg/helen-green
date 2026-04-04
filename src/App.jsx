@@ -6,7 +6,7 @@ import EspacioWine from './components/EspacioWine';
 import Patio from './components/Patio';
 import FeaturedMenu from './components/FeaturedMenu';
 import Cocktails from './components/Cocktails';
-import Desserts from './components/Desserts';
+
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import Location from './components/Location';
@@ -27,7 +27,7 @@ function App() {
         <Patio />
         <FeaturedMenu />
         <Cocktails />
-        <Desserts />
+
         <Gallery />
         <Testimonials />
         <Location />
