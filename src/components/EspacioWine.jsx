@@ -135,7 +135,7 @@ export default function EspacioWine() {
               return (
                 <div
                   key={index}
-                  className={`absolute transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-full max-w-[260px] md:max-w-[320px] flex flex-col items-center ${positionClasses}`}
+                  className={`absolute transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-full max-w-[280px] md:max-w-[360px] flex flex-col items-center ${positionClasses}`}
                   onClick={() => {
                     if (index === currentStep) {
                       openImage({ src: step.video, alt: `${step.title}`, type: 'video' });

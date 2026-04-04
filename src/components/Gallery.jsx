@@ -123,7 +123,7 @@ export default function Gallery() {
                 <img
                   src={celeb.src}
                   alt={celeb.alt}
-                  className="w-full h-56 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/70 via-transparent to-transparent flex items-end">
