@@ -23,17 +23,15 @@ export default function Location() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Map placeholder */}
-          <div className="scroll-hidden overflow-hidden h-[400px] bg-forest-light flex items-center justify-center">
-            <div className="text-center">
-              <MapPin size={40} className="text-blush/30 mx-auto mb-4" />
-              <p className="font-body text-blush/40 text-sm tracking-wider uppercase">
-                Google Maps
-              </p>
-              <p className="font-body text-blush/30 text-xs mt-2">
-                Embed del mapa aquí
-              </p>
-            </div>
+          {/* Map */}
+          <div className="scroll-hidden overflow-hidden h-[400px] w-full rounded-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.632627117515!2d-61.1722276!3d-33.0398079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b62d0059481fe1%3A0x55496fb92487346c!2sHelen%20Green!5e0!3m2!1ses-419!2sar!4v1775687923509!5m2!1ses-419!2sar"
+              className="w-full h-full border-0"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
 
           {/* Info */}
